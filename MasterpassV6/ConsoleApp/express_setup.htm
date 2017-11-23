@@ -1,0 +1,31 @@
+﻿<html>
+<head>
+    <!-- Sandbox -->
+    <script type="text/javascript" src="https://sandbox.static.masterpass.com/dyn/js/switch/integration/MasterPass.client.js"></script>
+</head>
+<body>
+    <p class="message"></p>
+
+    <img src="https://static.masterpass.com/dyn/img/btn/global/mp_chk_btn_147x034px.svg" onclick="executeMasterpass()"/>
+
+    <script type="text/javascript" language="Javascript">
+
+        function executeMasterpass() {
+
+    MasterPass.client.checkout({
+        "requestPairing":true,                                                      //required
+        "requestToken":"@Model.requestToken",                        //required
+        "pairingRequestToken":"@Model.pairingRequestToken",                  //required
+        "callbackUrl":"@Model.callbackUrl",           //required
+        "merchantCheckoutId":"@Model.merchantCheckoutId",                    //required
+        "requestedDataTypes":["ADDRESS", "PROFILE", "CARD"],                        //required
+        "requestExpressCheckout": true,                                             //required
+        "allowedCardTypes":["master","amex","diners","discover","maestro","visa"],  //optional
+        "version":"v6"                                                              //optional
+    });
+
+        }
+    </script>
+   
+</body>
+</html>

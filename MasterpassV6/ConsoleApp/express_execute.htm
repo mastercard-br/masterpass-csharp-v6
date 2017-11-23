@@ -1,0 +1,16 @@
+﻿<html>
+<head>
+    <!-- Sandbox -->
+</head>
+<body>
+    <p class="message"></p>
+
+    A compra executada no passo anterior finalizou com sucesso. Coloque um breakpoint no RootRoutes.cs/linha 84, para ver os dados da transação. Abaixo transactionId do checkout e long access token resultado do lightbox/callback<br/>
+    TransactionId: @Model.transactionId <br/>
+    LongAccessToken: @Model.longAccessToken <br/>
+
+    Com o long access token acima, podemos agora executar um express checkout (próxima compra do cliente)<br/>
+    <a href="executeExpress?longAccessToken=@Model.longAccessToken">Click Aqui para Executar um Express Checkout</a>
+
+</body>
+</html>
